@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/index.js" defer ></script>
+    <script src="https://kit.fontawesome.com/2a40c3d92f.js" crossorigin="anonymous"></script>
+    <title>Gerenciador</title>
+</head>
+<body>
+<!--Nav_bar-->
+    <div class="navBar">
+    <!--Id Usuário-->
+        <div id="user">
+        <abbr title="Usuario"><i class="fa-solid fa-user-tie"></i></abbr>
+        <p>Usuário</p>
+        </div>
+        <!--Link Home-->
+        <abbr title="Home"><a href="http://127.0.0.1:5501/index.html"><i class="fa-solid fa-house-user"></i></a></abbr>
+        <!--Link painel de Controle-->
+        <abbr title="Painel de Controle"><a href=""><i class="fa-solid fa-gear"></i></a></abbr>
+        <!--Link Informações de Segurança-->
+        <abbr title="Segurança"><a href=""><i class="fa-solid fa-key"></i></a></abbr>
+        <!--Link Sobre Nós-->
+        <abbr title="Sobre Nós"><a href=""><i class="fa-solid fa-address-card"></i></a></abbr>
+        <!--Link Score-->
+        <abbr title="Seu Score"><a href=""><i class="fa-regular fa-star-half-stroke"></i></a></abbr>
+        <!--Barra de Pesquisa-->
+        <abbr title="Ajuda"><input type="text" placeholder="Pesquisar..."/></abbr>
+    </div>
+    <!--Header/conteúdo do Cabeçãlho-->
+    <header>
+        <!--Conteúdo do DashBord-->
+        <div class="container_dash">
+            <!--Conteúdo Saldo-->
+            <div class="dash saldo"><label class="labelDahs" for="">Saldo</label> <p id="labelSaldo" class="valorDash">$</p></div>
+            <!--Conteúdo Receita-->
+            <div class="dash receita"><label class="labelDahs" for="">Receita</label>  <p id="labelRceita" class="valorDash">$</p></div>
+            <!--Conteúdo Receita-->
+            <div class="dash dispesa"><label class="labelDahs" for="">Dispesa</label> <p class="valorDash">$</p></div>
+            <!--Conteúdo Extra-->
+            <div class="dash extra"><label class="labelDahs" for="">Extra</label> <p id="labelextra"  class="valorDash">$</p></div>
+        </div>
+        <!--Container de Quanto tenho e dinheiro vivo-->
+        <div class="container_total">
+            <!--Conteúdo Ainta tenho-->
+            <div class="dashTotal">Ainda Tenho <p class="pTotal">$100,00</p> </div>
+            <!--Conteúdo Dinheiro Vivo-->
+            <div class="dashTotal">Dinheiro Vivo <p class="pTotal">$100,00</p> </div>
+            <!--Adicinar Receita-->
+            <div class="dashTotal">Adicionar Receita <input type="text" name="" id="InputaddReceita"> </div>
+            <!--Adicinar Extra-->
+            <div class="dashTotal">Adicionar Extra <input type="text" name="" id="InputaddExtra"> </div>
+            <!--Botao adicionar-->
+            <div class="dashTotal"> <button id="btnAdd" >Adicionar</button> </div>
+        </div>
+        <!--Container da Tabela-->
+        <div class="container_table">
+        <!-- Titulo Últimas Dispesas Adicionadas-->
+        <div id="TituloResumo">
+            <label for="#">Últimas Dispesas Adicionadas</label>
+        </div>
+        <!--Container tabela-->
+        <div class="table">
+        <!--Titulos da Tabela-->
+        <table id="tabela" border="0">
+            <th>Local</th>
+            <th>Valor</th>
+            <th>Total</th>
+        <tr>
+        <!--Linha Bar e linha valor gasto no Bar-->
+            <td>Bar</td>
+            <td>$100,00</td>
+        </tr>
+        <!--Linha restaurante e linha valor gasto no Restaurante-->
+            <td>Restaurante</td>
+            <td>$100,00</td>
+            <!--Linha Total da tabela-->
+            <td>$100,00</td>
+        </tr>
+        </table>
+        </div>
+        
+        <!--Container Adicionar Dispesas-->
+        <div class="container_Add_Dispesa">
+        <!--Container Titulo Adicionar Despesa-->
+        <div class="labelTituloDispesa">
+        <label for="#">Adicionar Despesa</label>
+        </div>
+        <!--Container de Opções par Adicionar Dispesas-->
+        <div class="conteiner_Form">
+            <!--Input Para adicionar o valor da dispesa a adiciona-->
+            <input type="text" name="" id="" placeholder="Valor">
+            <!--Seletor da Categoria da dispesa a adicionar-->
+            <select name="Select_categ" id="">
+            <!--Opções de Categoria para seleção-->
+            <option value="">Categoria</option>
+            <option value="">Mercado</option>
+            <option value="">Bar</option>
+            <option value="">Lazer</option>
+            <option value="">Padria</option>
+            <option value="">Carro</option>
+            <option value="">Escola</option>
+            </select>
+            <!--Seletor da Forma de pagamento da dispesa a adicionar-->
+            <select name="Selct_Pagamento" id="">
+            <!--Opções de Formas de Pagamento para seleção-->
+                <option value="">Forma De pagamento</option>
+                <option value="">Dinheiro</option>
+                <option value="">Débito</option>
+                <option value="">Crédito</option>
+            </select>
+
+            <!--Botão para Adicionar a dispesa-->
+            <button type="submit">Adicionar Dispesa</button>
+        </div>
+        
+        
+        </div>
+        </div>
+        
+        
+    
+    </header>
+    
+    
+    
+    
+    
+    
+    
+    <footer></footer>
+    
+</body>
+</html>
