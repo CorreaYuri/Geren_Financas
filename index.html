@@ -34,13 +34,13 @@
         <!--Conteúdo do DashBord-->
         <div class="container_dash">
             <!--Conteúdo Saldo-->
-            <div class="dash saldo"><label class="labelDahs" for="">Saldo</label> <p id="labelSaldo" class="valorDash">$</p></div>
+            <div class="dash saldo"><label class="labelDahs" for="">Saldo</label> <p id="labelSaldo" class="valorDash">$00,00</p></div>
             <!--Conteúdo Receita-->
-            <div class="dash receita"><label class="labelDahs" for="">Receita</label>  <p id="labelRceita" class="valorDash">$</p></div>
+            <div class="dash receita"><label class="labelDahs" for="">Receita</label>  <p id="labelRceita" class="valorDash">$00,00</p></div>
             <!--Conteúdo Receita-->
-            <div class="dash dispesa"><label class="labelDahs" for="">Dispesa</label> <p class="valorDash">$</p></div>
+            <div class="dash dispesa"><label class="labelDahs" for="">Dispesa</label> <p  id="labelDispesa" class="valorDash">$00,00</p></div>
             <!--Conteúdo Extra-->
-            <div class="dash extra"><label class="labelDahs" for="">Extra</label> <p id="labelextra"  class="valorDash">$</p></div>
+            <div class="dash extra"><label class="labelDahs" for="">Extra</label> <p id="labelextra"  class="valorDash"> $00,00</p></div>
         </div>
         <!--Container de Quanto tenho e dinheiro vivo-->
         <div class="container_total">
@@ -49,9 +49,9 @@
             <!--Conteúdo Dinheiro Vivo-->
             <div class="dashTotal">Dinheiro Vivo <p class="pTotal">$100,00</p> </div>
             <!--Adicinar Receita-->
-            <div class="dashTotal">Adicionar Receita <input type="text" name="" id="InputaddReceita"> </div>
+            <div class="dashTotal">Receita <input   placeholder="$0,00 " name="" id="InputaddReceita"> </div>
             <!--Adicinar Extra-->
-            <div class="dashTotal">Adicionar Extra <input type="text" name="" id="InputaddExtra"> </div>
+            <div class="dashTotal"> Extra <input  placeholder="$0,00" name="" id="InputaddExtra"> </div>
             <!--Botao adicionar-->
             <div class="dashTotal"> <button id="btnAdd" >Adicionar</button> </div>
         </div>
@@ -65,20 +65,12 @@
         <div class="table">
         <!--Titulos da Tabela-->
         <table id="tabela" border="0">
-            <th>Local</th>
+            <th>Categoria</th>
+            <th>Pagamento</th>
             <th>Valor</th>
-            <th>Total</th>
-        <tr>
-        <!--Linha Bar e linha valor gasto no Bar-->
-            <td>Bar</td>
-            <td>$100,00</td>
-        </tr>
-        <!--Linha restaurante e linha valor gasto no Restaurante-->
-            <td>Restaurante</td>
-            <td>$100,00</td>
-            <!--Linha Total da tabela-->
-            <td>$100,00</td>
-        </tr>
+            
+        
+        
         </table>
         </div>
         
@@ -91,29 +83,34 @@
         <!--Container de Opções par Adicionar Dispesas-->
         <div class="conteiner_Form">
             <!--Input Para adicionar o valor da dispesa a adiciona-->
-            <input type="text" name="" id="" placeholder="Valor">
+            <input  name="number" id="inputDispesa" placeholder="Valor">
             <!--Seletor da Categoria da dispesa a adicionar-->
-            <select name="Select_categ" id="">
+            <select name="Select_categ" id="selectCategoria">
             <!--Opções de Categoria para seleção-->
             <option value="">Categoria</option>
-            <option value="">Mercado</option>
-            <option value="">Bar</option>
-            <option value="">Lazer</option>
-            <option value="">Padria</option>
-            <option value="">Carro</option>
-            <option value="">Escola</option>
+            <option value="Moradia">Moradia</option>
+            <option value="Energia">Energia</option>
+            <option value="Água">Água</option>
+            <option value="Internet">Internet</option>
+            <option value="Telefonia">Telefonia</option>
+            <option value="Mercado">Mercado</option>
+            <option value="Bar">Bar</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Padaria">Padaria</option>
+            <option value="Automóvel">Automóvel</option>
+            <option value="Escola">Cursos</option>
             </select>
             <!--Seletor da Forma de pagamento da dispesa a adicionar-->
-            <select name="Selct_Pagamento" id="">
+            <select name="Selct_Pagamento" id="selectformaPagamento">
             <!--Opções de Formas de Pagamento para seleção-->
                 <option value="">Forma De pagamento</option>
-                <option value="">Dinheiro</option>
-                <option value="">Débito</option>
-                <option value="">Crédito</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Débito">Débito</option>
+                <option value="Crédito">Crédito</option>
             </select>
 
             <!--Botão para Adicionar a dispesa-->
-            <button type="submit">Adicionar Dispesa</button>
+            <button id="btnDispesa" type="submit">Adicionar Dispesa</button>
         </div>
         
         
