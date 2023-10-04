@@ -1,85 +1,76 @@
-let botaoAddReceita = document.querySelector("#btnAdd");
-let btnAddDispesa = document.querySelector("#btnDispesa");
-let inputReceita = document.querySelector("#InputaddReceita");
-let inputExtra = document.querySelector("#InputaddExtra");
-let inputDespesa = document.querySelector("#inputDispesa");
-let displaySaldo = document.querySelector("#labelSaldo");
-let displayReceita = document.querySelector("#labelRceita");
-let displayExtra = document.querySelector("#labelextra");
-let displayDespesa = document.querySelector("#labelDispesa");
-let saldoTotal = inputReceita.value + inputExtra.value;
-let despesaTotal = saldoTotal - inputDespesa.value;
+botaoAddReceita = document.querySelector("#btnAddReceita");
+botaoAddExtra = document.querySelector("#btnAddExtra");
+btnAddDispesa = document.querySelector("#btnDispesa");
+aindaTenho = document.querySelector(".pTotal");
+//Variáveis de controle do modal para adicionar receitas e despesas
+
+inputReceita = document.querySelector("#InputaddReceita").value;
+inputExtra = document.querySelector("#InputaddExtra").value;
+inputDespesa = document.querySelector("#inputDispesa").value;
+
+displaySaldo = document.querySelector("#labelSaldo");
+displayReceita = document.querySelector("#labelRceita");
+displayExtra = document.querySelector("#labelextra");
+displayDespesa = document.querySelector("#labelDispesa");
 
 
-
-function soma(receita, extra){
-    let saldoTotal = receita + extra;
-    return saldoTotal;
-}
-function subtraiDespesaDoSaldo(totalSaldo,valorDespesa){
-    let subtrair= totalSaldo-valorDespesa;
-    return subtrair;
-}
-
-
-
+somaSaldo = inputReceita+inputExtra;
 
 
 botaoAddReceita.addEventListener("click", ()=>{
-    let valorReceita = parseFloat(inputReceita.value);
-    let valorExtra = parseFloat(inputExtra.value);
-    
-    
-    
+    valorReceita= parseFloat(document.querySelector("#InputaddReceita").value);
+    displayReceita.innerHTML = "R$"+ valorReceita.toFixed(2);
+    displaySaldo.innerHTML = "R$"+valorReceita.toFixed(2);
     if(isNaN(valorReceita)){
-        alert("Digite um valor par adicionar Receita!");
-        
-    } 
-    else{
-        displayReceita.innerHTML = "R$"+valorReceita.toFixed(2);
-        displaySaldo.innerHTML = "R$"+valorReceita.toFixed(2);
-    }
-    
-    if(isNaN(valorExtra)){
-        alert("Digite um valor par adicionar Extra!");
+        alert("Digite um valor válido, por exemplo? 10,00");
+        displayReceita.innerHTML = "R$00,00";
         displaySaldo.innerHTML = "R$00,00";
         
-    } else{
-        displayExtra.innerHTML = "R$"+valorExtra.toFixed(2);
-        displaySaldo.innerHTML = "R$"+soma(valorReceita,valorExtra).toFixed(2);
     }
     
-});
+} );
+
+botaoAddExtra.addEventListener("click", ()=>{
+    valorExtra= parseFloat(document.querySelector("#InputaddExtra").value);
+    displayExtra.innerHTML = "R$"+ valorExtra.toFixed(2);
+    if(isNaN(valorExtra)){
+        alert("Digite um valor válido, por exemplo? 10,00");
+        displayExtra.innerHTML = "R$00,00";
+        
+    }
+    validacao();
+} );
+
+btnAddDispesa.addEventListener("click",() =>{
+    inputDespesa =parseFloat(document.querySelector("#inputDispesa").value);
+    displayDespesa.innerHTML = "R$"+inputDespesa.toFixed(2);
+    totalDespesa = somaSaldo - inputDespesa;
+    aindaTenho.innerHTML = "R$"+totalDespesa.toFixed(2);
+    if(inputDespesa > 0 && somaSaldo> 0){
+        displaySaldo.innerHTML = "R$"+totalDespesa.toFixed(2);
+        
+     }
+    if(isNaN(inputDespesa)){
+        alert("Digite um valor válido, por exemplo? 10,00");
+        displayDespesa.innerHTML = "R$00,00";
+    }
+    addvalorTabela();
+})
 
 
+function validacao(){
+    inputReceita =parseFloat(document.querySelector("#InputaddReceita").value);
+    inputExtra =parseFloat(document.querySelector("#InputaddExtra").value);
+    displaySaldo = document.querySelector("#labelSaldo");
+    somaSaldo = inputReceita+inputExtra;
 
-btnAddDispesa.addEventListener("click", () => {
-    let valorReceita = parseFloat(inputReceita.value);
-    let valorExtra = parseFloat(inputExtra.value);
-    let TatalSaldo = valorReceita +valorExtra;
-
-    let valorDespesa = parseFloat(inputDespesa.value);
-    let categorias = document.querySelector("#selectCategoria");
-    let categoria = categorias.value;
-    let formaPagameto = document.querySelector("#selectformaPagamento");
-    let formasPagamento = formaPagameto.value;
-    if (isNaN(valorDespesa)) {
-        alert("Digite um valor para adicionar Despesa!");
+    if(inputReceita > 0 && inputExtra >0 ){
+        displaySaldo.innerHTML ="R$"+somaSaldo.toFixed(2);
+        displayReceita.innerHTML ="R$"+inputReceita.toFixed(2);
         return;
     }
-    if( categoria==0 || formasPagamento ==0){
-        alert("Selecione uma categoria e a forma de pagamento");
-        return;
-    }
-    else{
-        addvalorTabela()
-    }
     
-    
-    displayDespesa.innerHTML= "R$"+valorDespesa.toFixed(2);
-    displaySaldo.innerHTML= "R$"+subtraiDespesaDoSaldo(TatalSaldo,valorDespesa).toFixed(2);
-});
-
+};
 function addvalorTabela(){
         
         let categorias = document.querySelector("#selectCategoria");
@@ -93,7 +84,7 @@ function addvalorTabela(){
 
         let tabela = document.querySelector("#tabela");
 
-        if(categoria ==0 && formaPagameto ==0 && valorDespesa ===0 ){
+        if(categoria ==0 && formaPagameto ==0 && valorDespesa ==0 ){
             console.log("Selecione uma categoria e a forma de pagamento");
             return;
         }
@@ -110,11 +101,3 @@ function addvalorTabela(){
         }
         
 };   
-
-
-
-
-function subtraiDespesaDoSaldo(totalSaldo,valorDespesa){
-    let subtrair= totalSaldo-valorDespesa;
-    return subtrair;
-};
