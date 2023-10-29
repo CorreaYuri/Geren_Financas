@@ -64,13 +64,19 @@ header{
 
 }
 .dashTotal{
-    background-color: aqua;
+    border-bottom: 1px dotted black;
     display: flex;
-    width: 15rem;
+    width: auto;
+    padding: 2px 5px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 5px;
     height: 2rem;
+}
+.Inputadd{
+    padding: 0.1rem;
+    width: 4rem;
+    margin: 1rem;
 }
 .pTotal{
     margin-left: 3rem;
@@ -80,17 +86,18 @@ header{
     width: 100%;
     height: 11.9rem;
     
+    
 }
 
 .table{
-    
     position: relative;
     display: inline-block;
-    width: 100%;
     height: 5rem;
-    
-    
-    
+    margin-left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    width:100%;
+
 }
 .container_Add_Dispesa{
     height: 4rem;
@@ -109,10 +116,9 @@ header{
 }
 #tabela{
     display: inline-block;
-    width: 80%;
+    width: auto;
     border: none;
-    margin-left: 50%;
-    transform: translate(-50%);
+    
     
 }
 #tabela th{
