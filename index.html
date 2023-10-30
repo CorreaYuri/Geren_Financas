@@ -9,158 +9,43 @@
     <title>Gerenciador</title>
 </head>
 <body>
-<!--Nav_bar-->
-    <div class="navBar">
-    <!--Id Usuário-->
-        <div id="user">
-        <abbr title="Usuario"><i class="fa-solid fa-user-tie"></i></abbr>
-        <p>Usuário</p>
+<main>
+    <div class="containerResut">
+        <div class="saldo">
+            <label for="">Saldo</label>
+            <label class="labelValorDisplay" for="">R$00,00</label>
         </div>
-        <!--Link Home-->
-        <abbr title="Home"><a href="http://127.0.0.1:5501/index.html"><i class="fa-solid fa-house-user"></i></a></abbr>
-        <!--Link painel de Controle-->
-        <abbr title="Painel de Controle"><a href=""><i class="fa-solid fa-gear"></i></a></abbr>
-        <!--Link Informações de Segurança-->
-        <abbr title="Segurança"><a href=""><i class="fa-solid fa-key"></i></a></abbr>
-        <!--Link Sobre Nós-->
-        <abbr title="Sobre Nós"><a href=""><i class="fa-solid fa-address-card"></i></a></abbr>
-        <!--Link Score-->
-        <abbr title="Seu Score"><a href=""><i class="fa-regular fa-star-half-stroke"></i></a></abbr>
-        <!--Barra de Pesquisa-->
-        <abbr title="Ajuda"><input type="text" placeholder="Pesquisar..."/></abbr>
+        <div class="Despesa">
+            <label for="">Despesa</label>
+            <label class="labelValorDisplay" for="">R$00,00</label>
+        </div>
     </div>
-    <!--Header/conteúdo do Cabeçãlho-->
-    <header>
-        <!--Conteúdo do DashBord-->
-        <div class="container_dash">
-            <!--Conteúdo Saldo-->
-            <div class="dash saldo">
-            <label class="labelDahs" for="">Saldo</label> 
-            <p id="labelSaldo" class="valorDash">$00,00</p>
-            
-            </div>
-            <!--Conteúdo Receita-->
-            <div class="dash receita">
-            <label class="labelDahs" for="">Receita</label>  
-            <p id="labelRceita" class="valorDash">$00,00</p>
-            
-            </div>
-            <!--Conteúdo Receita-->
-            <div class="dash dispesa">
-            <label class="labelDahs" for="">Dispesa</label> 
-            <p  id="labelDispesa" class="valorDash">$00,00</p>
-            
-            </div>
-            <!--Conteúdo Extra-->
-            <div class="dash extra">
-            <label class="labelDahs" for="">Extra</label> 
-            <p id="labelextra"  class="valorDash"> $00,00</p>
-            
-            </div>
-        </div>
-        <!--Container de Quanto tenho e dinheiro vivo-->
-        <div class="container_total">
-            <!--Conteúdo Ainta tenho-->
-            <div class="dashTotal">Ainda Tenho 
-            <p class="pTotal">$100,00</p>
-            
-             </div>
-            <!--Conteúdo Dinheiro Vivo-->
-            <div class="dashTotal">Dinheiro Vivo 
-            <p class="pTotal">$100,00</p>
-            
-             </div>
-            <!--Adicinar Receita-->
-            <div class="dashTotal">Recei
-            <input   placeholder="$00,00 " name="" class="Inputadd" id="InputaddReceita"> 
-            <button id="btnAddReceita" >Adicionar</button> 
-            
-            </div>
-            <!--Adicinar Extra-->
-            <div class="dashTotal"> Extra 
-            <input  placeholder="$00,00" name="" class="Inputadd" id="InputaddExtra"> 
-            <button id="btnAddExtra" >Adicionar</button> 
-            
-            </div>
-            <!--Botao adicionar-->
-            
-        </div>
-        <!--Container da Tabela-->
-        <div class="container_table">
-        <!-- Titulo Últimas Dispesas Adicionadas-->
-        <div id="TituloResumo">
-            <label for="#">Últimas Dispesas Adicionadas</label>
-        </div>
-        <!--Container tabela-->
-        <div class="table">
-        <!--Titulos da Tabela-->
-        <table id="tabela" border="0">
-            <tr>
-            <th>Categoria</th>
-            <th>Pagamento</th>
-            <th>Valor</th>
-            </tr>
-            
-            
-        
-        
-        </table>
-        </div>
-        
-        <!--Container Adicionar Dispesas-->
-        <div class="container_Add_Dispesa">
-        <!--Container Titulo Adicionar Despesa-->
-        <div class="labelTituloDispesa">
-        <label for="#">Adicionar Despesa</label>
-        </div>
-        <!--Container de Opções par Adicionar Dispesas-->
-        <div class="conteiner_Form">
-            <!--Input Para adicionar o valor da dispesa a adiciona-->
-            <input  name="number" id="inputDispesa" placeholder="Valor">
-            <!--Seletor da Categoria da dispesa a adicionar-->
-            <select name="Select_categ" id="selectCategoria">
-            <!--Opções de Categoria para seleção-->
-            <option value="">Categoria</option>
-            <option value="Moradia">Moradia</option>
-            <option value="Energia">Energia</option>
-            <option value="Água">Água</option>
-            <option value="Internet">Internet</option>
-            <option value="Telefonia">Telefonia</option>
-            <option value="Mercado">Mercado</option>
-            <option value="Bar">Bar</option>
-            <option value="Lazer">Lazer</option>
-            <option value="Padaria">Padaria</option>
-            <option value="Automóvel">Automóvel</option>
-            <option value="Escola">Cursos</option>
-            </select>
-            <!--Seletor da Forma de pagamento da dispesa a adicionar-->
-            <select name="Selct_Pagamento" id="selectformaPagamento">
-            <!--Opções de Formas de Pagamento para seleção-->
-                <option value="">Forma De pagamento</option>
-                <option value="Dinheiro">Dinheiro</option>
-                <option value="Débito">Débito</option>
-                <option value="Crédito">Crédito</option>
-            </select>
+    <div class="containerRelatorio">
+        <h3>Relatório</h3>
+        <p>Salário Bruto</p> 
+        <p>R$500,00</p><br>
+        <p>Despesa Fixa</p>
+        <p>R$500,00</p>
+    </div>
+    <div class="containerAdd">
+        <label class="labels" for="">Adicionar Receita</label>
+        <input class="inputs" type="text" placeholder="Digite o valor da Receita">
+        <button class="buttons" >Adicionar</button>
+        <label class="labels" for="">Adicionar Renda Extra</label>
+        <input class="inputs" type="text" placeholder="Digite o valor da Renda Extra">
+        <button class="buttons" >Adicionar</button>
+        <label class="labels" for="">Adicionar Despesa</label>
+        <input class="inputs" type="text" placeholder="Digite o valor da Despesa">
+        <button class="buttons" >Adicionar</button>
+    </div>
 
-            <!--Botão para Adicionar a dispesa-->
-            <button id="btnDispesa" type="submit">Adicionar Dispesa</button>
-        </div>
-        
-        
-        </div>
-        </div>
-        
-        
-    
-    </header>
-    
-    
-    
-    
-    
-    
-    
-    <footer></footer>
-    
+                    
+                    
+
+
+
+
+
+</main>
 </body>
 </html>
