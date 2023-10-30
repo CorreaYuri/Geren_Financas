@@ -1,0 +1,28 @@
+Receber valor de receita
+Receber valor de renda extra
+Calcular o salario bruto
+Calcular a despesa fixa (50% do salário)
+Calcular a despesa variável (valor da receita - 1/2 * salário bruto)
+Calcular o lucro líquido (salário bruto - despesas totais)
+Mostrar os resultados:
+- Salário Bruto
+- Despesa Fixa
+- Despesa Variável
+- Lucro Líquido"""
+# Entrada
+receita = float(input("Valor da receita: "))
+renda_extra = float(input("Renda Extra: "))
+# Processamento
+salario_bruto = receita + renda_extra
+despesa_fixa = salario_bruto / 2
+despesa_variavel = (receita - (salario_bruto / 4))
+lucro_liquido = salario_bruto - (despesa_fixa + despesa_variavel)
+# Saída
+print("\nSalário Bruto: R$ {:.2f}".format(salario_bruto))
+print("Despesa Fixa: R$ {:.2f}".format(despesa_fixa))
+print("Despesa Variável: R$ {:.2f}".format(despesa_variavel))
+print("Lucro Líquido: R$ {:.2f}\n".format(lucro_liquido))
+
+
+
+

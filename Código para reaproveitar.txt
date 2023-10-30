@@ -1,0 +1,89 @@
+botaoAddReceita.addEventListener("click", ()=>{
+    receita= parseFloat(document.querySelector("#InputaddReceita").value);
+    displayReceitaeceita.innerHTML = "R$"+ receita.toFixed(2);
+    displaySaldo.innerHTML = "R$"+receita.toFixed(2);
+    if(isNaN(receita)){
+        alert("Digite um valor válido, por exemplo? 10,00");
+        displayReceita.innerHTML = "R$00,00";
+        displaySaldo.innerHTML = "R$00,00";
+        
+    }
+    
+} );
+
+botaoAddExtra.addEventListener("click", ()=>{
+    inputExtra= parseFloat(document.querySelector("#InputaddExtra").value);
+    displayExtra.innerHTML = "R$"+ inputExtra.toFixed(2);
+    if(isNaN(inputExtra)){
+        alert("Digite um valor válido, por exemplo? 10,00");
+        displayExtra.innerHTML = "R$00,00";
+        
+    }
+    validacao();
+} );
+
+btnAddDispesa.addEventListener("click",() =>{
+    inputDespesa =parseFloat(document.querySelector("#inputDispesa").value);
+    displayDespesa.innerHTML = "R$"+inputDespesa.toFixed(2);
+    totalDespesa =   somaSaldo - inputDespesa ;
+    aindaTenho.innerHTML = "R$"+totalDespesa.toFixed(2);
+
+    if(inputDespesa > 0 && somaSaldo> 0){
+        displayDespesa.innerHTML = "R$"+totalDespesa.toFixed(2);
+    }
+    
+    if(isNaN(inputDespesa)){
+        alert("Digite um valor válido, por exemplo? 10,00");
+        displayDespesa.innerHTML = "R$00,00";
+    }
+    addvalorTabela();
+    
+})
+
+
+function validacao(){
+    receita =parseFloat(document.querySelector("#InputaddReceita").value);
+    despesa_variavel =parseFloat(document.querySelector("#InputaddExtra").value);
+    displaySaldo = document.querySelector("#labelSaldo");
+    somaSaldo = receita+inputExtra;
+
+    if(receita > 0 && inputExtra >0 ){
+        displaySaldo.innerHTML ="R$"+somaSaldo.toFixed(2);
+        displayReceita.innerHTML ="R$"+receita.toFixed(2);
+        return;
+    }
+    
+    
+};
+function addvalorTabela(){
+        
+        let categorias = document.querySelector("#selectCategoria");
+        let categoria = categorias.value;
+
+        let formaPagameto = document.querySelector("#selectformaPagamento");
+        let formasPagamento = formaPagameto.value;
+
+        let inputDispesa = document.querySelector("#inputDispesa");
+        let valorDespesa = parseFloat(inputDispesa.value);
+
+        let tabela = document.querySelector("#tabela");
+
+        if(categoria ==0 && formaPagameto ){
+            alert("Selecione uma categoria e a forma de pagamento");
+            return;
+        }
+        else {
+            var novaLinha = tabela.insertRow();
+            var novaCategoria = novaLinha.insertCell();
+            var novaFormaPagamento = novaLinha.insertCell();
+            var vDespesa = novaLinha.insertCell();
+            novaCategoria.innerHTML = categoria;
+            novaFormaPagamento.innerHTML = formasPagamento;
+            vDespesa.innerHTML = "R$"+valorDespesa.toFixed(2);
+            
+            
+        }
+
+        
+        
+};   
