@@ -13,30 +13,30 @@
     <div class="containerResut">
         <div class="saldo">
             <label for="">Saldo</label>
-            <label class="labelValorDisplay" for="">R$00,00</label>
+            <label id="labelValorDisplaySaldo" class="labelValorDisplay" for="inputReceita">R$00,00</label>
         </div>
         <div class="Despesa">
             <label for="">Despesa</label>
-            <label class="labelValorDisplay" for="">R$00,00</label>
+            <label id="labelValorDisplayDespesa" class="labelValorDisplay" for="">R$00,00</label>
         </div>
     </div>
     <div class="containerRelatorio">
         <h3>Relatório</h3>
         <p>Salário Bruto</p> 
-        <p>R$500,00</p><br>
+        <p  id="pSala_bruto">R$0,00</p><br>
         <p>Despesa Fixa</p>
-        <p>R$500,00</p>
+        <p id="pDespesaFixa">R$0,00</p>
     </div>
     <div class="containerAdd">
-        <label class="labels" for="">Adicionar Receita</label>
-        <input class="inputs" type="text" placeholder="Digite o valor da Receita">
-        <button class="buttons" >Adicionar</button>
+        <label class="labels" for="#">Adicionar Receita</label>
+        <input id="inputReceita" class="inputs"  type="number" placeholder="Digite o valor da Receita">
+        <button  class="buttons" id="btnAddReceita" >Adicionar</button>
         <label class="labels" for="">Adicionar Renda Extra</label>
-        <input class="inputs" type="text" placeholder="Digite o valor da Renda Extra">
-        <button class="buttons" >Adicionar</button>
+        <input class="inputs" id="inputExtra" type="number" placeholder="Digite o valor da Renda Extra">
+        <button class="buttons" id="btnAddExtra" >Adicionar</button>
         <label class="labels" for="">Adicionar Despesa</label>
-        <input class="inputs" type="text" placeholder="Digite o valor da Despesa">
-        <button class="buttons" >Adicionar</button>
+        <input class="inputs" id="inputDespesa" type="number" placeholder="Digite o valor da Despesa">
+        <button id="btnAddDespesa" class="buttons" >Adicionar</button>
     </div>
 
                     

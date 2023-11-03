@@ -16,6 +16,7 @@ body{
     overflow: hidden;
     backdrop-filter: grayscale(30%);
     font-family: 'Exo 2', sans-serif;
+    
 }
 
 main{
@@ -27,7 +28,7 @@ main{
     padding: 0.3rem;
     border-radius: 5px;
     background-color: var(--bege);
-   
+    box-shadow: 1px 2px 10px var(--marrom);
 }
   
 .saldo{
@@ -39,6 +40,7 @@ main{
     flex-direction: column;
     margin-bottom: 1rem;
     background-color: var(--branco);
+    box-shadow: 1px 2px 10px var(--marrom);
 }
 .Despesa{
     border: 1px solid var(--marrom);
@@ -49,20 +51,20 @@ main{
     display: flex;
     flex-direction: column;
     background-color: var(--branco);
+    box-shadow: 1px 2px 5px var(--marrom);
 }
 .containerRelatorio{
     border: 1px solid var(--marrom);
     border-radius: 5px;
     padding-left: 5px;
     background-color: var(--branco);
+    box-shadow: 1px 2px 5px var(--marrom);
     
 
 }
 .containerRelatorio h3{
     margin: 5px 0;
     text-align: center;
-    
-    
 }
 .containerRelatorio p{
     display: inline-block;
@@ -77,8 +79,6 @@ main{
     flex-direction: column;
     border-top: 1px dotted gray;
     padding-bottom: 1rem;
-    
-    
 }
 .inputs, .buttons{
     width: 40%;
@@ -92,6 +92,7 @@ main{
 .inputs{
     margin-bottom: 4px;
     padding: 5px;
+    align-items: center;
 }
 .labels{
     margin-bottom: 2px;
